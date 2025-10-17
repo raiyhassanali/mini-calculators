@@ -14,7 +14,6 @@ This collection includes the following calculators:
 ## 🚀 Technologies Used
 
 - HTML5
-- CSS3
 - JavaScript (Vanilla JS)
 
 ## 📝 Description
