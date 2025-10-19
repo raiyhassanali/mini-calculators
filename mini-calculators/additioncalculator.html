@@ -12,9 +12,9 @@
     <script>
         let first = prompt("Enter first number");
         let second = prompt("Enter second number");
-        // Convert strings to numbers using only arithmetic you know
-        first = first * 1;   // turns "5" into 5
-        second = second * 1; // turns "7" into 7
+        // Convert strings to numbers using the concept of type casting 
+        first = Number(first);   // turns "5" into 5
+        second = Number(second); // turns "7" into 7
 
         let sum = first + second;
         console.log(sum);
