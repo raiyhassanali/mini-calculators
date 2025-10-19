@@ -15,8 +15,9 @@
         let first = prompt("Enter first number");
         let second = prompt("Enter second number");
         // Convert strings to numbers using only arithmetic you know
-        first = first * 1;   // turns "5" into 5
-         second = second * 1; 
+        // Using the concept of type casting that Sir taught, we can convert strings to numbers as:
+        first=Number(first)  
+        second=Number(second) 
 
         let result = first / second;
         console.log(result);
