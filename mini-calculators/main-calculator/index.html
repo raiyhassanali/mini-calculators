@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All-Operations Calculator</title>
+</head>
+<body>
+
+  <h1>Simple All-Operations Calculator</h1>
+
+  <!-- Just a form to take user input -->
+  <form id="calcForm">
+    <input type="number" id="operand1" placeholder="Enter first number">
+    <input type="number" id="operand2" placeholder="Enter second number">
+
+    <!-- Dropdown to select operation (Sir taught this in HTML class) -->
+    <select id="operator">
+      <!-- Option tag provides multiple choices, but user selects only one -->
+      <option value="+">Add (+)</option>
+      <option value="-">Subtract (-)</option>
+      <option value="*">Multiply (×)</option>
+      <option value="/">Divide (÷)</option>
+    </select>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <!-- This is what we did in JS class to show the result -->
+  <div id="result"></div>
+
+  <script>
+    // Listen for form submission
+    document.getElementById('calcForm').addEventListener('submit', function(event) {
+      event.preventDefault();  // Prevent page reload (just like "return false" statement in JS class)
+      calculate();
+    });
+
+    // Function to perform calculation
+    function calculate() {
+      // Type casting input values to numbers using document.getElementById method( Sir taught this in JS class)
+      const op1 = Number(document.getElementById('operand1').value);
+      const op2 = Number(document.getElementById('operand2').value);
+      const operator = document.getElementById('operator').value;
+
+      // Did not assign any value yet in "result", will assign based on the operation
+      let result;
+
+      // Decide which operation to perform
+      if (operator === '+') {
+        result = op1 + op2;
+      } else if (operator === '-') {
+        result = op1 - op2;
+      } else if (operator === '*') {
+        result = op1 * op2;
+      } else if (operator === '/') {
+        // Handling division by zero to avoid "Infinity" result
+        if (op2 === 0) {
+          result = 'Cannot divide by zero'; // Error message for user
+        } else {
+          result = op1 / op2;
+        }
+      } else {
+        // Error message for unknown operator though it should not happen due to dropdown we used in HTML but for future changes, we can use this.
+        result = 'Unknown operator';
+      }
+
+      // Calling the result div to show the result on the browser
+      document.getElementById('result').innerText = `Result: ${result}`;
+    }
+  </script>
+ <style>
+    /* === Classic Modern Style === */
+
+    /* Smooth gradient background and centered layout */
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #0d47a1;
+    }
+
+    /* Heading styling */
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
+    }
+
+    /* Calculator form box */
+    form {
+      background: #ffffff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    form:hover {
+      transform: scale(1.03);
+    }
+
+    /* Input fields */
+    input[type="number"], select {
+      width: 200px;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #90caf9;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    input[type="number"]:focus, select:focus {
+      border-color: #0d47a1;
+      box-shadow: 0 0 5px rgba(13, 71, 161, 0.3);
+    }
+
+    /* Calculate button */
+    button {
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #1565c0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Result box styling */
+    #result {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #0d47a1;
+      background: #e3f2fd;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+      min-width: 220px;
+      text-align: center;
+      transition: background 0.4s;
+    }
+
+    #result:hover {
+      background: #bbdefb;
+    }
+
+  </style>
+</body>
+</html>
