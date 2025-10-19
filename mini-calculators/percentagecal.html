@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script>
-    let obtMarks= prompt("Enter your obtained marks");
-    let totalMarks= prompt("Enter your total marks");
-    let percentage=(obtMarks/totalMarks)*100;
-    console.log(percentage);
-</script>
 <body>
     <H1>Percentage Calculator</H1>
     <p>Your percentage is: <span id="percentage"></span></p>
     <script>
+        let obtMarks= prompt("Enter your obtained marks");
+    let totalMarks= prompt("Enter your total marks");
+    let percentage=(obtMarks/totalMarks)*100;
+    console.log(percentage);
         document.getElementById("percentage").innerHTML=percentage;
         console.log(percentage);
     </script>
