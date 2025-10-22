@@ -10,6 +10,7 @@ This collection includes the following calculators:
 - Multiplication Calculator
 - Division Calculator
 - Percentage Calculator
+- All-in-One Calculator (performs Addition, Subtraction, Multiplication, and Division)
 
 ## 🚀 Technologies Used
 
@@ -42,6 +43,12 @@ mini-calculators/
 └── percentagecal.html
 ```
 
+## Live Demo
+
+I have also built a new all-in-one calculator that can perform all four basic operations (addition, subtraction, multiplication, division). You can try it here:
+
+https://68f8a598d357e4df4574c67a--stunning-gelato-78bbe4.netlify.app/
+
 ## 🌱 Learning Outcomes
 
 Through this project, I learned:
@@ -53,4 +60,3 @@ Through this project, I learned:
 ## 👤 Author
 
 A beginner JavaScript developer learning web development through hands-on projects.
-
